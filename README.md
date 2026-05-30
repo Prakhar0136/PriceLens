@@ -1,131 +1,144 @@
-PriceLens – Product Price Tracker App
+# 💰 PriceLens
 
+> A modern full-stack price tracking platform that helps users monitor products, analyze price trends, and receive instant alerts when prices drop.
 
-PriceLens is a modern web application that allows users to track product prices over time and get notified when prices drop. It helps users make smarter buying decisions by monitoring prices automatically.
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
+## 📖 Overview
 
-Features:
+PriceLens is a modern web application that allows users to track product prices over time and receive notifications when prices drop.
 
-User authentication using email
+Instead of manually checking products every day, users can simply paste a product URL and let PriceLens monitor it automatically. The application continuously tracks prices, stores historical data, and alerts users when a better deal becomes available.
 
-Add products by pasting product URLs
+## ✨ Key Features
 
-Automatically fetch product name, price, currency, and image
+* **Secure User Authentication:** Sign up and log in using email authentication powered by Supabase.
+* **Product Tracking:** Add products instantly by pasting product URLs.
+* **Automatic Product Extraction:** Fetches product name, current price, currency, and product image automatically.
+* **Historical Price Monitoring:** Tracks price changes over time and maintains historical records.
+* **Email Notifications:** Sends instant email alerts whenever a price drop is detected.
+* **Personal Dashboard:** View and manage all tracked products from a centralized dashboard.
+* **Responsive Design:** Optimized for desktop, tablet, and mobile devices.
+* **Cloud Deployment:** Fully deployed and hosted on Vercel.
 
-Track price changes over time
+## 🏗️ System Architecture
 
-Email notifications when a price drops
+1. **Frontend Layer:** Next.js App Router with React and Tailwind CSS provides a fast and responsive user interface.
+2. **Authentication Layer:** Supabase Auth handles user registration and login securely.
+3. **Product Scraping Layer:** Firecrawl API extracts product details directly from product pages.
+4. **Database Layer:** Supabase stores product information, user accounts, and historical price data.
+5. **Notification Layer:** Resend delivers automated email alerts when price drops occur.
+6. **Deployment Layer:** Vercel hosts and serves the application globally.
 
-Dashboard to view all tracked products
+## ⚙️ How It Works
 
-Fully deployed on Vercel
+1. User signs up or logs in using email authentication.
+2. User pastes a product URL into the application.
+3. PriceLens automatically extracts product information.
+4. Product data is stored in the database.
+5. Scheduled price checks compare current prices with previous values.
+6. When a price drop is detected, an email notification is sent to the user.
+7. Users can monitor all tracked products from their dashboard.
 
-Clean and responsive UI
+## 🛠️ Tech Stack
 
+### Frontend
+- Next.js (App Router)
+- React
+- Tailwind CSS
 
+### Backend
+- Next.js Server Actions
+- Supabase
 
-Tech Stack:
+### Services
+- Firecrawl API
+- Resend
+- Vercel
 
-Frontend:
+## 🚀 Getting Started
 
-Next.js (App Router)
+### Prerequisites
 
-React
+- Node.js (v18 or higher)
+- Supabase Project
+- Firecrawl API Key
+- Resend API Key
 
-Tailwind CSS
+### 1. Clone the Repository
 
+```bash
+git clone https://github.com/yourusername/pricelens.git
+cd pricelens
+```
 
-Backend:
+### 2. Install Dependencies
 
-Next.js Server Actions
+```bash
+npm install
+```
 
-Supabase (Auth + Database)
+### 3. Configure Environment Variables
 
+Create a `.env.local` file in the root directory:
 
-Services:
-
-Firecrawl API (for product scraping)
-
-Resend (for email notifications)
-
-Vercel (deployment)
-
-
-
-How It Works
-
-User signs up or logs in using email
-
-User pastes a product URL
-
-PriceLens scrapes product details automatically
-
-Product price is stored in the database
-
-Background price checks compare old and new prices
-
-If a price drop is detected, an email alert is sent
-
-
-
-Environment Variables
-
-Create a .env.local file in the root directory and add:
-
+```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 FIRECRAWL_API_KEY=your_firecrawl_api_key
 RESEND_API_KEY=your_resend_api_key
+```
 
-Do not commit .env.local to GitHub.
+### 4. Run the Development Server
 
+```bash
+npm run dev
+```
 
+Open:
 
-Deployment
+```text
+http://localhost:3000
+```
 
-The project is deployed using Vercel.
+## ☁️ Deployment
 
-Steps:
+The application is deployed using Vercel.
 
-Push code to GitHub
+### Deployment Steps
 
-Import repository into Vercel
+1. Push the project to GitHub.
+2. Import the repository into Vercel.
+3. Configure all environment variables.
+4. Deploy the application.
 
-Add environment variables in Vercel dashboard
+## 🔒 Security Notes
 
-Deploy
+- Environment variables are stored securely using `.env.local`.
+- Sensitive credentials are never exposed to the client.
+- Server-only operations are implemented using `"use server"`.
+- Authentication and database access are managed through Supabase.
 
+## 🔮 Future Improvements
 
+- Browser Extension
+- Progressive Web App (PWA)
+- Telegram Notifications
+- WhatsApp Notifications
+- Advanced Price Analytics
+- Multi-store Price Comparison
 
-Security Notes
+## 📌 Project Status
 
-.env files are ignored using .gitignore
+**Completed and Successfully Deployed**
 
-Sensitive keys are never exposed to the client
+## 👨‍💻 Author
 
-Server-only logic is handled using "use server"
+**Prakhar Shakya**
 
-
-
-Future Improvements
-
-Browser extension
-
-Mobile-friendly PWA version
-
-Telegram / WhatsApp alerts
-
-
-
-Project Status
-
-Completed and successfully deployed 
-
-
-
-Author: Prakhar Shakya
-
-Author
-
-Built by Prakhar Shakya
+Built with Next.js, Supabase, Firecrawl, Resend, and Vercel to help users make smarter purchasing decisions through automated price tracking.
